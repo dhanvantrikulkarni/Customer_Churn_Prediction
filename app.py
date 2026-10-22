@@ -733,7 +733,7 @@ elif current_page == "Customer Analysis":
                 xaxis_title="Account Balance",
                 yaxis_title="Estimated Salary"
             )
-            st.plotly_chart(fig_balance_salary, width='stretch')
+            st.plotly_chart(fig_balance_salary, width='stretch', key="advanced_balance_salary")
         
         with col6:
             st.markdown('<h4 style="color: #667eea; margin-bottom: 0.5rem;">Tenure vs Number of Products</h4>', unsafe_allow_html=True)
@@ -752,7 +752,7 @@ elif current_page == "Customer Analysis":
                 xaxis_title="Tenure (Years)",
                 yaxis_title="Number of Products"
             )
-            st.plotly_chart(fig_tenure_products, width='stretch')
+            st.plotly_chart(fig_tenure_products, width='stretch', key="advanced_tenure_products")
 
 elif current_page == "Churn Prediction":
     st.markdown('<h2 style="color: #667eea; margin-bottom: 1.5rem;">🔮 Churn Prediction</h2>', unsafe_allow_html=True)
@@ -911,7 +911,7 @@ elif current_page == "Churn Prediction":
                             height=300,
                             margin=dict(l=20, r=20, t=40, b=20)
                         )
-                        st.plotly_chart(fig_gauge, width='stretch')
+                        st.plotly_chart(fig_gauge, width='stretch', key="churn_gauge")
                     
                     with col_gauge2:
                         st.markdown("### Risk Level")
@@ -1015,7 +1015,7 @@ elif current_page == "Sales Trends":
                     xaxis_title="Location",
                     yaxis_title="Total Sales ($)"
                 )
-                st.plotly_chart(fig_loc_sales, width='stretch')
+                st.plotly_chart(fig_loc_sales, width='stretch', key="sales_location")
             
             with col2:
                 st.markdown('<h4 style="color: #667eea; margin-bottom: 0.5rem;">💳 Sales by Card Type</h4>', unsafe_allow_html=True)
@@ -1042,7 +1042,7 @@ elif current_page == "Sales Trends":
                     xaxis_title="Card Type",
                     yaxis_title="Total Sales ($)"
                 )
-                st.plotly_chart(fig_card_sales, width='stretch')
+                st.plotly_chart(fig_card_sales, width='stretch', key="sales_card")
             
             st.markdown("---")
             
@@ -1068,7 +1068,7 @@ elif current_page == "Sales Trends":
                     xaxis_title="Churn Status",
                     yaxis_title="Average Sales ($)"
                 )
-                st.plotly_chart(fig_churn_sales, width='stretch')
+                st.plotly_chart(fig_churn_sales, width='stretch', key="sales_churn")
             
             with col4:
                 st.markdown('<h4 style="color: #667eea; margin-bottom: 0.5rem;">📦 Sales by Number of Products</h4>', unsafe_allow_html=True)
@@ -1091,7 +1091,7 @@ elif current_page == "Sales Trends":
                     yaxis_title="Average Sales ($)",
                     coloraxis_showscale=False
                 )
-                st.plotly_chart(fig_product_sales, width='stretch')
+                st.plotly_chart(fig_product_sales, width='stretch', key="sales_product")
 
 elif current_page == "Customer Segmentation":
     st.markdown('<h2 style="color: #667eea; margin-bottom: 1.5rem;">🎨 Customer Segmentation</h2>', unsafe_allow_html=True)
@@ -1122,7 +1122,7 @@ elif current_page == "Customer Segmentation":
             yaxis_title="Estimated Salary",
             legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
         )
-        st.plotly_chart(fig_card_active, width='stretch')
+        st.plotly_chart(fig_card_active, width='stretch', key="segment_card_active")
     
     with col2:
         fig_products = px.scatter(
@@ -1141,7 +1141,7 @@ elif current_page == "Customer Segmentation":
             yaxis_title="Number of Products",
             legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
         )
-        st.plotly_chart(fig_products, width='stretch')
+        st.plotly_chart(fig_products, width='stretch', key="segment_products")
     
     st.markdown("---")
     
@@ -1184,7 +1184,7 @@ elif current_page == "Customer Segmentation":
             textposition='inside',
             textinfo='percent+label'
         )
-        st.plotly_chart(fig_segments, width='stretch')
+        st.plotly_chart(fig_segments, width='stretch', key="segment_distribution")
     
     with col4:
         st.markdown('<h4 style="color: #667eea; margin-bottom: 0.5rem;">Segment Characteristics</h4>', unsafe_allow_html=True)
@@ -1224,7 +1224,7 @@ elif current_page == "Customer Segmentation":
             yaxis_title="Credit Score",
             showlegend=False
         )
-        st.plotly_chart(fig_credit_segment, width='stretch')
+        st.plotly_chart(fig_credit_segment, width='stretch', key="segment_credit")
     
     with col6:
         st.markdown('<h4 style="color: #667eea; margin-bottom: 0.5rem;">Account Balance by Segment</h4>', unsafe_allow_html=True)
@@ -1241,7 +1241,7 @@ elif current_page == "Customer Segmentation":
             yaxis_title="Account Balance",
             showlegend=False
         )
-        st.plotly_chart(fig_balance_segment, width='stretch')
+        st.plotly_chart(fig_balance_segment, width='stretch', key="segment_balance")
 
 # Footer
 st.markdown("---")
